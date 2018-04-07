@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.charlie.direccinip.MainActivity"
-    android:padding="22dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
     android:orientation="vertical"
     android:background="#FFFF">
 
@@ -195,6 +198,15 @@
             android:gravity="center"/>
 
     </LinearLayout>
+
+    <!-- Linea Horizontal -->
+    <View
+        android:id="@+id/view_linea_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#D1D1D1"
+        android:layout_marginTop="10dp" />
+
 
     <!-- Resultados -->
     <LinearLayout
@@ -458,10 +470,23 @@
             android:text="Calcular"
             android:paddingRight="30dp"
             android:paddingLeft="30dp"
-            android:background="#A6A6A6"
-            android:textColor="#494949"
+            android:background="#008ba2"
+            android:textColor="#FFFF"
             android:textStyle="bold"
             android:textSize="15dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLimpiar"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:src="@drawable/clear"
+            android:background="#FFF"
+            android:layout_marginLeft="10dp"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            />
 
     </LinearLayout>
 </LinearLayout>
