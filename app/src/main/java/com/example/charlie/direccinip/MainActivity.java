@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     TextView nId1, nId2, nId3, nId4;
     TextView mask1, mask2, mask3, mask4;
     int m1, m2, m3, m4;
-    float x, y;
+    float x, y, r;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         final TextView mask3 = (TextView) findViewById(R.id.M3);
         final TextView mask4 = (TextView) findViewById(R.id.M4);
 
+        final TextView bd1 = (TextView) findViewById(R.id.broadId1);
+        final TextView bd2 = (TextView) findViewById(R.id.broadId2);
+        final TextView bd3 = (TextView) findViewById(R.id.broadId3);
+        final TextView bd4 = (TextView) findViewById(R.id.broadId4);
+
 
         botonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
                 x = mascara / 8;
                 y = mascara % 8;
+                r = 8 - y;
 
                 if(x==0){
 
@@ -75,6 +81,16 @@ public class MainActivity extends AppCompatActivity {
                     nId2.setText(""+n2);
                     nId3.setText(""+n3);
                     nId4.setText(""+n4);
+
+                    int b1 = (int) (n1 + (Math.pow(2, r) -1));
+                    int b2 = 255;
+                    int b3 = 255;
+                    int b4 = 255;
+
+                    bd1.setText(""+b1);
+                    bd2.setText(""+b2);
+                    bd3.setText(""+b3);
+                    bd4.setText(""+b4);
 
                 }else{
                     if(x==1){
@@ -100,6 +116,16 @@ public class MainActivity extends AppCompatActivity {
                         nId3.setText(""+n3);
                         nId4.setText(""+n4);
 
+                        int b1 = n1;
+                        int b2 = (int) (n2 + (Math.pow(2, r) -1));
+                        int b3 = 255;
+                        int b4 = 255;
+
+                        bd1.setText(""+b1);
+                        bd2.setText(""+b2);
+                        bd3.setText(""+b3);
+                        bd4.setText(""+b4);
+
 
                     }else{
                         if(x==2){
@@ -124,6 +150,16 @@ public class MainActivity extends AppCompatActivity {
                             nId3.setText(""+n3);
                             nId4.setText(""+n4);
 
+                            int b1 = n1;
+                            int b2 = n2;
+                            int b3 = (int) (n3 + (Math.pow(2, r) -1));
+                            int b4 = 255;
+
+                            bd1.setText(""+b1);
+                            bd2.setText(""+b2);
+                            bd3.setText(""+b3);
+                            bd4.setText(""+b4);
+
 
                         }else{
                             if(x==3){
@@ -147,6 +183,16 @@ public class MainActivity extends AppCompatActivity {
                                 nId2.setText(""+n2);
                                 nId3.setText(""+n3);
                                 nId4.setText(""+n4);
+
+                                int b1 = n1;
+                                int b2 = n2;
+                                int b3 = n3;
+                                int b4 = (int) (n4 + (Math.pow(2, r) -1));
+
+                                bd1.setText(""+b1);
+                                bd2.setText(""+b2);
+                                bd3.setText(""+b3);
+                                bd4.setText(""+b4);
 
                             }else{
                                 if(x==4){
@@ -174,6 +220,11 @@ public class MainActivity extends AppCompatActivity {
                                     int b2 = n2;
                                     int b3 = n3;
                                     int b4 = n4;
+
+                                    bd1.setText(""+b1);
+                                    bd2.setText(""+b2);
+                                    bd3.setText(""+b3);
+                                    bd4.setText(""+b4);
 
                                 }
                             }
@@ -205,6 +256,11 @@ public class MainActivity extends AppCompatActivity {
                 nId2.setText("");
                 nId3.setText("");
                 nId4.setText("");
+
+                bd1.setText("");
+                bd2.setText("");
+                bd3.setText("");
+                bd4.setText("");
 
 
             }
