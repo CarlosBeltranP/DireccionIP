@@ -9,11 +9,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    
     EditText octal1, octal2, octal3, octal4, m;
-    TextView nId1, nId2, nId3, nId4;
-    TextView mask1, mask2, mask3, mask4;
-    int m1, m2, m3, m4;
+    int m1, m2, m3, m4, cantH, pRed, pHost;
     float x, y, r;
 
     @Override
@@ -46,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         final TextView bd3 = (TextView) findViewById(R.id.broadId3);
         final TextView bd4 = (TextView) findViewById(R.id.broadId4);
 
+        final TextView cantHost = (TextView) findViewById(R.id.cantHost);
+        final TextView parteRed = (TextView) findViewById((R.id.parteRed));
+        final TextView parteHost = (TextView) findViewById((R.id.parteHost));
+
 
         botonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
                 r = 8 - y;
 
                 if(x==0){
-
                     m1 = (int) (256 - (Math.pow(2, (8-y))));
                     m2 = 0;
                     m3 = 0;
@@ -92,10 +93,17 @@ public class MainActivity extends AppCompatActivity {
                     bd3.setText(""+b3);
                     bd4.setText(""+b4);
 
+                    cantH = (int) ((Math.pow(2, (32-mascara)))-2);
+                    cantHost.setText(""+cantH);
+
+                    pRed = (int) Math.pow(2, mascara);
+                    parteRed.setText(""+pRed);
+
+                    pHost = (int) Math.pow(2, (32 - mascara));
+                    parteHost.setText(""+pHost);
+
                 }else{
                     if(x==1){
-
-
                         m1 = 255;
                         m2 = (int) (256 - (Math.pow(2, (8-y))));
                         m3 = 0;
@@ -126,6 +134,14 @@ public class MainActivity extends AppCompatActivity {
                         bd3.setText(""+b3);
                         bd4.setText(""+b4);
 
+                        cantH = (int) ((Math.pow(2, (32-mascara)))-2);
+                        cantHost.setText(""+cantH);
+
+                        pRed = (int) Math.pow(2, mascara);
+                        parteRed.setText(""+pRed);
+
+                        pHost = (int) Math.pow(2, (32 - mascara));
+                        parteHost.setText(""+pHost);
 
                     }else{
                         if(x==2){
@@ -160,6 +176,14 @@ public class MainActivity extends AppCompatActivity {
                             bd3.setText(""+b3);
                             bd4.setText(""+b4);
 
+                            cantH = (int) ((Math.pow(2, (32-mascara)))-2);
+                            cantHost.setText(""+cantH);
+
+                            pRed = (int) Math.pow(2, mascara);
+                            parteRed.setText(""+pRed);
+
+                            pHost = (int) Math.pow(2, (32 - mascara));
+                            parteHost.setText(""+pHost);
 
                         }else{
                             if(x==3){
@@ -194,6 +218,15 @@ public class MainActivity extends AppCompatActivity {
                                 bd3.setText(""+b3);
                                 bd4.setText(""+b4);
 
+                                cantH = (int) ((Math.pow(2, (32-mascara)))-2);
+                                cantHost.setText(""+cantH);
+
+                                pRed = (int) Math.pow(2, mascara);
+                                parteRed.setText(""+pRed);
+
+                                pHost = (int) Math.pow(2, (32 - mascara));
+                                parteHost.setText(""+pHost);
+
                             }else{
                                 if(x==4){
                                     m1 = 255;
@@ -226,20 +259,26 @@ public class MainActivity extends AppCompatActivity {
                                     bd3.setText(""+b3);
                                     bd4.setText(""+b4);
 
+                                    cantH = (int) ((Math.pow(2, (32-mascara)))-2);
+                                    cantHost.setText(""+cantH);
+
+                                    pRed = (int) Math.pow(2, mascara);
+                                    parteRed.setText(""+pRed);
+
+                                    pHost = (int) Math.pow(2, (32 - mascara));
+                                    parteHost.setText(""+pHost);
+
                                 }
                             }
                         }
                     }
                 }
-
-
             }
         });
 
         botonLimpiar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
                 octal1.setText("");
                 octal2.setText("");
@@ -261,6 +300,10 @@ public class MainActivity extends AppCompatActivity {
                 bd2.setText("");
                 bd3.setText("");
                 bd4.setText("");
+
+                cantHost.setText("");
+                parteHost.setText("");
+                parteRed.setText("");
 
 
             }
